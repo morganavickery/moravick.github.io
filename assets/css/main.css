@@ -1273,3 +1273,82 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+.custom-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tile-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.tile-header p {
+  margin: 5px 0 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.tile-body {
+  margin: 10px 0;
+}
+
+.tile-icon {
+  color: #17a2b8;
+}
+
+.tile-footer .tile-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #17a2b8;
+  border: 1px solid #17a2b8;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tile-footer .tile-link:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.social-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1da1f2; /* Replace with your desired background color */
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #0d8bd8; /* Slightly darker shade for hover effect */
+  transform: scale(1.1);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
