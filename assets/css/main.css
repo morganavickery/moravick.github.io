@@ -1,353 +1,918 @@
-<!DOCTYPE html>
-<html lang="en">
+/**
+* Template Name: iPortfolio
+* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-technologies-websites-template/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index Portfolio Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/profile headshot.png" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Morgan A Vickery</h1>
-    </a>
-    <!-- SOCIAL LINKS -->
-
-    <div class="social-links text-center">
-      <a href="https://bsky.app/profile/morganavickery.bsky.social" class="social-button">
-        <img src="assets/img/icons/icon_bluesky.png" alt="BlueSky Icon" class="social-icon">
-      </a>
-      <a href="https://www.linkedin.com/in/morganavickery/" class="social-button">
-        <img src="assets/img/icons/icon_linkedin.png" alt="LinkedIn Icon" class="social-icon">
-      </a>
-      <a href="https://twitter.com/_moravick" class="social-button">
-        <img src="assets/img/icons/icon_twitter.png" alt="Twitter Icon" class="social-icon">
-      </a>
-    </div>
-    <!-- NAVIGATION MENU-->
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#about"><i class="bi bi-person-lines-fill navicon"></i>About</a></li>
-        <li><a href="#research projects"><i class="bi bi-kanban navicon"></i>Research Projects</a></li>
-        <li><a href="#technologies"><i class="bi bi-cpu navicon"></i>Technologies</a></li>
-        <li><a href="#cv" class="active"><i class="bi bi-blockquote-left navicon"></i>Curriculum Vitae</a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Morgan A Vickery</h2>
-        <p>
-          <span class="typed" data-typed-items="Educator, Researcher, Designer">Researcher</span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
-      </div>
-
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <div class="about-section">
-          <p><em>Doctoral Candidate</em> | <strong>Learning Sciences Program at Indiana University -
-              Bloomington</strong></p>
-          <p><em>Associate Instructor</em> | <strong>EDUC-I 251 Learning Theories for Teachers & EDUC-M 101</strong></p>
-          <p><em>Chair</em> | <strong>International Learning Sciences Student Association</strong></p>
-          <p><em>Graduate Research Assistant</em> | <strong>Joshua Danish's RAPT Lab</strong></p>
-          <p><em>Graduate Tutor</em> | <strong>Writing Tutorial Services</strong></p>
-          <p><em>Founder x Chief Technical Officer</em> | <strong>LearnabilityHQ.com</strong></p>
-          <p><em>UX/Digital Product Designer, Researcher, & Architect</em> | <strong>Inquirium, LLC.</strong></p>
-        </div>
-    </section>
-
-    <!-- research projects Section -->
-    <section id="projects" class="research projects section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Research Projects</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container-tiles">
-        <div class="project-tile">
-          <div class="icon flex-shrink-0"><i class="bi bi-cube"></i></div>
-          <div>
-            <h4 class="title">A Critical Participatory Study of Body-Inclusive Embodied Activity</h4>
-            <p class="description">
-              My ongoing dissertation work featuring 3 articles:
-            <ul>
-              <li><em>Narratives of Embodied Expectations, Resistance, and Conformity</em></li>
-              <li><em>A Critical Deconstruction of Embodied Activity</em></li>
-              <li><em>A Framework for Body-Inclusive Embodied Activity</em></li>
-            </ul>
-            This work takes a critical and phenomenological perspective and participatory approach to working with
-            young adolescents to reflect, critique, design, and reimagine classroom embodied learning activities. Of
-            note, this work explicitly attends to how constructs such as bodily-relational autonomy,
-            trauma-sensitivity, disability-inclusion, and intersectionality manifest in (particularly)
-            technology-facilitated embodied learning contexts.
-            </p>
-            <p class="role"><strong>Lead Researcher</strong> | Advised by Joshua Danish</p>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-tile">
-          <div class="icon flex-shrink-0"><i class="bi bi-brightness-alt-high"></i></div>
-          <div>
-            <h4 class="title">Re-Mediating Mixed-Reality for Kids with Disabilities</h4>
-            <p class="description">
-              A summer camp for young campers with moderate-to-severe communication disorders - I iteratively
-              designed, facilitated, and analyzed a series of mixed-reality embodied learning activities designed to
-              enable multimodal participation, communication, and coordination between campers.
-            </p>
-            <p class="role"><strong>Lead Researcher</strong> | Advised by Joshua Danish</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- technologies Section -->
-    <section id="technologies" class="technologies section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Technologies</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container-tiles">
-
-        <!-- LearnabilityHQ.com -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>LearnabilityHQ.com</h4>
-              <p>Lead Designer & Developer</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RadioEverywhere -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>RadioEverywhere</h4>
-              <p>Lead Designer & Developer</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GEM-STEP -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>GEM-STEP</h4>
-              <p>Graduate Researcher & Designer</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- MEME -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>MEME</h4>
-              <p>Graduate Researcher</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fieldscope -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>Fieldscope</h4>
-              <p>Accessibility Consultant & Auditor</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- To& Through -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>To& Through</h4>
-              <p>Analytics Architect & Data Analyst</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ILSSA Site -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>ILSSA Site</h4>
-              <p>Lead Designer & Developer</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- LS Graduate Student Association Site -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>LS Graduate Student Association Site</h4>
-              <p>Lead Designer & Developer</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- InqScribe -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>InqScribe</h4>
-              <p>Technical Documentation Editor</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- LS Graduate Student Conference Site -->
-        <div>
-          <div class="technologies-content h-100 custom-tile">
-            <div class="tile-header">
-              <h4>LS Graduate Student Conference Site</h4>
-              <p>Lead Designer & Developer</p>
-            </div>
-            <div class="tile-footer">
-              <a href="#" class="tile-link">Visit Site <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Lato", sans-serif;
+}
 
 
-      </div><!-- End technologies Container -->
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #272829;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #050d18;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #006466;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
 
-      </div>
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #a8a9b4;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #040b14;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
 
-      </div>
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
-    </section>
+.light-background {
+  --background-color: #f4fafd;
+  --surface-color: #ffffff;
+}
 
-    <section id="cv" class="cv section">
-      
-    </section>
-    
-  </main>
+.dark-background {
+  --background-color: #040b14;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #151f2b;
+  --contrast-color: #ffffff;
+}
 
-  <footer id="footer" class="footer position-relative light-background">
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
 
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename" Portfolio></strong><span>All Rights Reserved</span>
-        </p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-          href="https://themewagon.com">ThemeWagon</a>
-      </div>
-    </div>
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
 
-  </footer>
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  /* Semi Bold */
+}
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+p,
+a,
+li,
+span {
+  font-family: var(--default-font);
+  font-weight: 400;
+  /* Regular */
+}
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+.navmenu a {
+  font-family: var(--nav-font);
+  font-weight: 700;
+  /* Bold for navigation links */
+}
 
-</body>
 
-</html>
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  width: 300px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.header .profile-img img {
+  margin: 15px auto;
+  display: block;
+  width: 120px;
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.header .logo {
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.header .logo img {
+  max-height: 32px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .social-links {
+  margin: 0 0 20px 0;
+}
+
+.header .social-links a {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+  margin: 0 2px;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.header .social-links a:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+@media (min-width: 1200px) {
+
+  .header~main,
+  .header~#footer {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    left: -100%;
+  }
+}
+
+.header.header-show {
+  left: 0;
+}
+
+.header .header-toggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.header .header-toggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.mobile-nav-toggle {
+  display: none;
+}
+
+.navmenu {
+  padding: 0;
+  z-index: 9997;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+.navmenu a,
+.navmenu a:focus {
+  color: var(--nav-color);
+  padding: 15px 10px;
+  font-family: var(--nav-font);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.navmenu a .navicon,
+.navmenu a:focus .navicon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.navmenu a .toggle-dropdown,
+.navmenu a:focus .toggle-dropdown {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  flex-shrink: 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+
+.navmenu a .toggle-dropdown:hover,
+.navmenu a:focus .toggle-dropdown:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: var(--nav-hover-color);
+}
+
+.navmenu a:hover .navicon,
+.navmenu .active .navicon,
+.navmenu .active:focus .navicon {
+  color: var(--accent-color);
+}
+
+.navmenu .active .toggle-dropdown,
+.navmenu .active:focus .toggle-dropdown {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotate(180deg);
+}
+
+.navmenu .dropdown {
+  display: block;
+}
+
+.navmenu .dropdown a,
+.navmenu .dropdown a:focus {
+  color: --nav-dropdown-color;
+}
+
+.navmenu .dropdown a:hover,
+.navmenu .dropdown .active,
+.navmenu .dropdown .active:focus {
+  color: var(--nav-dropdown-hover-color);
+}
+
+.navmenu .dropdown ul {
+  position: static;
+  display: none;
+  z-index: 99;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  background-color: var(--nav-dropdown-background-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.navmenu .dropdown ul ul {
+  background-color: rgba(33, 37, 41, 0.1);
+}
+
+.navmenu .dropdown>.dropdown-active {
+  display: block;
+  background-color: rgba(33, 37, 41, 0.03);
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding: 40px 0;
+  position: relative;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 25px 0;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 50vh;
+  /* Reduce the minimum height */
+  padding: 40px 0;
+  /* Reduce vertical padding */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 70%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  /* Ensure content stays centered */
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 48px;
+  /* Reduce font size */
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 10px 0 0 0;
+  /* Adjust spacing below heading */
+  font-size: 20px;
+  /* Reduce font size */
+}
+
+.hero p span {
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.hero .social-links {
+  margin-top: 15px;
+  /* Reduce space below paragraph */
+}
+
+.hero .social-links a {
+  font-size: 20px;
+  /* Adjust icon size */
+  display: inline-block;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  line-height: 1;
+  margin-right: 15px;
+  /* Reduce spacing between icons */
+  transition: 0.3s;
+}
+
+.hero .social-links a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 28px;
+    /* Adjust for smaller screens */
+  }
+
+  .hero p {
+    font-size: 18px;
+    /* Adjust for smaller screens */
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about {
+  padding: 60px 60px;
+}
+.about .content h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about .content ul strong {
+  margin-right: 10px;
+}
+
+.about .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: var(--accent-color);
+  line-height: 0;
+}
+
+/*--------------------------------------------------------------
+# Technologies Section
+--------------------------------------------------------------*/
+.technologies {
+  padding: 60px 60px;
+}
+
+.technologies .container-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.technologies .technologies-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  background-color: var(--surface-color);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effects for tiles */
+.technologies .technologies-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.technologies .tile-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.technologies .tile-header p {
+  margin: 5px 0 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.technologies .tile-footer {
+  text-align: center;
+  width: 100%;
+}
+
+.technologies .tile-footer .tile-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.technologies .tile-footer .tile-link:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .technologies .isotope-container {
+    grid-template-columns: 1fr;
+    /* One tile per row on smaller screens */
+  }
+
+  .technologies .technologies-content {
+    height: auto;
+    padding: 15px;
+  }
+}
+
+/*--------------------------------------------------------------
+# ?? Section
+--------------------------------------------------------------*/
+.custom-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tile-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.tile-header p {
+  margin: 5px 0 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.tile-body {
+  margin: 10px 0;
+}
+
+.tile-icon {
+  color: #17a2b8;
+}
+
+.tile-footer .tile-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #17a2b8;
+  border: 1px solid #17a2b8;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tile-footer .tile-link:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+/*--------------------------------------------------------------
+# SOCIAL BUTTONS 
+--------------------------------------------------------------*/
+.social-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1da1f2;
+  /* Replace with your desired background color */
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #0d8bd8;
+  /* Slightly darker shade for hover effect */
+  transform: scale(1.1);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+/*--------------------------------------------------------------
+# PROJECTS Section
+--------------------------------------------------------------*/
+.projects {
+  padding: 60px 60px;
+  background-color:var(--background-color);
+}
+
+.projects .container-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+
+.project-tile {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-item .icon {
+  color: #17a2b8;
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.project-item .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-item .description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.project-item .role {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+}
