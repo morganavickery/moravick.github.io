@@ -22,9 +22,9 @@
 :root {
   --background-color: #ffffff;
   /* Background color for the entire website, including individual sections */
-  --default-color: #272829;
+  --default-color: black;
   /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18;
+  --heading-color: black;
   /* Color for headings, subheadings and title throughout the website */
   --accent-color: #006466;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -42,23 +42,18 @@
   /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #040b14;
   /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14;
-  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4;
-  /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff;
-  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #27264024;
+  --background-color: #2726402c;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #040b14;
+  --background-color: #151427;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #151f2b;
@@ -118,11 +113,6 @@ h6 {
   /* Semi Bold */
 }
 
-.emphasize {
-  padding: 20px;
-  color: var(--contrast-color);
-  font-family: inherit;
-}
 
 p,
 a,
@@ -465,7 +455,7 @@ section,
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--dark-teal);
   left: 0;
   bottom: 0;
 }
@@ -488,7 +478,7 @@ section,
   /* Ensures the pseudo-element doesn't spill out */
 }
 
-.hero img {
+.hero .background-container img {
   position: absolute;
   inset: 0;
   display: block;
@@ -513,7 +503,6 @@ section,
   /* Overlay above the image */
 }
 
-
 .hero .container {
   position: relative;
   z-index: 3;
@@ -522,6 +511,31 @@ section,
   /* Optional: Ensure text is readable */
   text-align: center;
   /* Center align content */
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 10px;
+}
+
+.hero .text-container {
+  align-items: center;
+  text-align: left;
+  align-content: center;
+}
+
+
+.hero .headshot-container img {
+  margin: 15px auto;
+  display: block;
+  width: 200px;
+  height: auto;
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  object-fit: fill;
+}
+
+.emphasize {
+  color: var(--contrast-color);
+  font-family: inherit;
+  font-weight: lighter;
 }
 
 
@@ -856,6 +870,7 @@ section,
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  padding-bottom: 10px;
 }
 
 .projects .container-tiles-other {
@@ -865,15 +880,13 @@ section,
   grid-auto-rows: minmax(100px, auto);
 }
 
-
 .project-tile {
   background-color: #f8f9fa;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  align-content: normal;
+  align-content:start;
 }
 
 .project-tile:hover {
@@ -895,15 +908,19 @@ section,
 
 .project-tile .description {
   font-size: .8rem;
-  line-height: 1.25;
+  line-height: 1.15;
+  text-align: justify;
   font-weight: lighter;
   color: #555;
+  padding-bottom: 10px;
 }
 
-.project-tile .role {
-  padding-top: 10px;
+.project-tile .role, 
+.project-tile .principles {
   font-size: 0.8rem;
   font-weight: 100;
   color: #333;
   text-align: right;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
 }
