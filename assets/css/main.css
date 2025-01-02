@@ -429,7 +429,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
- padding: 40px;
+  padding: 40px;
   overflow: clip;
 }
 
@@ -467,9 +467,11 @@ section .content-container {
 .section-title p {
   margin-bottom: 0;
 }
+
 .content-container p {
   margin-bottom: 0;
 }
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -480,7 +482,8 @@ section .content-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures the pseudo-element doesn't spill out */
+  overflow: hidden;
+  /* Ensures the pseudo-element doesn't spill out */
 }
 
 .hero .background-container img {
@@ -490,57 +493,71 @@ section .content-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1; /* Place image behind everything */
+  z-index: 1;
+  /* Place image behind everything */
 }
 
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, rgba(39, 38, 64, 0.9), rgba(20, 69, 82, 0.9)); /* Gradient overlay */
-  z-index: 2; /* Overlay above the image */
+  background: linear-gradient(45deg, rgba(39, 38, 64, 0.9), rgba(20, 69, 82, 0.9));
+  /* Gradient overlay */
+  z-index: 2;
+  /* Overlay above the image */
 }
 
 .hero .container {
   position: relative;
-  z-index: 3; /* Ensure content is on top of the overlay */
-  color: #ffffff; /* Optional: Ensure text is readable */
+  z-index: 3;
+  /* Ensure content is on top of the overlay */
+  color: #ffffff;
+  /* Optional: Ensure text is readable */
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  flex-wrap: wrap;
+  /* Allow items to wrap on smaller screens */
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Add spacing between elements */
+  gap: 20px;
+  /* Add spacing between elements */
   text-align: center;
 }
 
 .hero .headshot-container {
-  flex: 0 0 auto; /* Ensure the headshot does not grow or shrink */
-  max-width: 250px; /* Limit the width of the headshot */
+  flex: 0 0 auto;
+  /* Ensure the headshot does not grow or shrink */
+  max-width: 250px;
+  /* Limit the width of the headshot */
   text-align: center;
 }
 
 .hero .headshot-container img {
-  width: 100%; /* Ensure the image scales within its container */
+  width: 100%;
+  /* Ensure the image scales within its container */
   height: auto;
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
   object-fit: cover;
-  border-radius: 50%; /* Make it circular if needed */
+  border-radius: 50%;
+  /* Make it circular if needed */
 }
 
 .hero .text-container {
-  flex: 1; /* Allow the text to take up the remaining space */
+  flex: 1;
+  /* Allow the text to take up the remaining space */
   text-align: left;
 }
 
 .hero h2 {
   margin: 0;
-  font-size: 48px; /* Adjust font size */
+  font-size: 48px;
+  /* Adjust font size */
   font-weight: 700;
 }
 
 .hero p {
   margin: 10px 0 0 0;
-  font-size: 20px; /* Adjust font size */
+  font-size: 20px;
+  /* Adjust font size */
 }
 
 .hero p span {
@@ -557,21 +574,25 @@ section .content-container {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
+    /* Stack items vertically */
     text-align: center;
   }
 
   .hero .headshot-container {
-    max-width: 150px; /* Adjust headshot size on smaller screens */
+    max-width: 150px;
+    /* Adjust headshot size on smaller screens */
     margin-bottom: 15px;
   }
 
   .hero h2 {
-    font-size: 28px; /* Adjust for smaller screens */
+    font-size: 28px;
+    /* Adjust for smaller screens */
   }
 
   .hero p {
-    font-size: 18px; /* Adjust for smaller screens */
+    font-size: 18px;
+    /* Adjust for smaller screens */
   }
 }
 
@@ -622,9 +643,9 @@ section .content-container {
 .tools .topics-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  grid-auto-rows: minmax(100px, auto);
-  padding-bottom: 20px;
+  gap: 10px;
+  grid-auto-rows: minmax(auto, auto);
+  padding-bottom: 10px;
 }
 
 .topics-tile {
@@ -632,21 +653,20 @@ section .content-container {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-weight: lighter;
+  /* font-weight: lighter; */
   text-align: center;
   height: 80px;
-  padding: 10px 10px 10px 10px;
-align-content: center;
-  justify-content:space-between; /* Centers the content vertically */
+  padding: 10px;
+  align-content: center;
+  justify-content: space-between;
+  /* Centers the content vertically */
 }
 
 .tools .tools-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  grid-auto-rows: minmax(100px, auto);
-  /* padding-bottom: 20px; */
-  /* align-items: center; */
+  gap: 10px;
+  grid-auto-rows: minmax(auto, auto);
 }
 
 .tools-tile {
@@ -656,10 +676,14 @@ align-content: center;
   height: 80px;
   padding: 10px 10px 10px 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex; /* Enables flexible alignment */
-  flex-direction: column; /* Ensures header and content are stacked vertically */
-  align-items: center; /* Centers the content horizontally */
-  justify-content: center; /* Centers the content vertically */
+  display: flex;
+  /* Enables flexible alignment */
+  flex-direction: column;
+  /* Ensures header and content are stacked vertically */
+  align-items: center;
+  /* Centers the content horizontally */
+  justify-content: center;
+  /* Centers the content vertically */
 }
 
 .tools-tile:hover {
@@ -669,22 +693,28 @@ align-content: center;
 
 .tools-tile .tile-header {
   display: flex;
-  align-items: center; /* Vertically aligns all elements */
-  justify-content: center; /* Centers content horizontally */
-  gap: 10px; /* Adds spacing between the title and the icon */
-  margin-bottom: 10px; /* Adds spacing below the header */
+  align-items: center;
+  /* Vertically aligns all elements */
+  justify-content: center;
+  /* Centers content horizontally */
+  gap: 10px;
+  /* Adds spacing between the title and the icon */
+  margin-bottom: 10px;
+  /* Adds spacing below the header */
 }
 
 .tools-tile .tile-header h4 {
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
-  text-align:justify;
+  text-align: justify;
 }
 
 .tools-tile .tile-header .bracket-icon-container img {
-  height: 24px; /* Adjust size for brackets */
-  width: auto; /* Keep proportions */
+  height: 24px;
+  /* Adjust size for brackets */
+  width: auto;
+  /* Keep proportions */
 }
 
 .tools-tile ul {
@@ -754,7 +784,7 @@ align-content: center;
   border-radius: 8px;
   padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  align-content:start;
+  align-content: start;
 }
 
 .project-tile:hover {
@@ -778,36 +808,43 @@ align-content: center;
   font-size: .7rem;
   line-height: 1.15;
   text-align: left;
-  font-weight: lighter;
+  font-weight: 150px;
   color: #555;
   padding-bottom: 10px;
 }
 
-.project-tile .role, 
+.project-tile .role,
 .project-tile .principles {
   font-size: 0.8rem;
-  font-weight: 100;
+  font-weight: 200px;
   color: #333;
   text-align: right;
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
+  margin: 0;
+  /* Remove any default margin */
+  padding: 0;
+  /* Remove any default padding */
 }
 
 .project-tile .tile-header {
   display: flex;
-  justify-content: space-between; /* Ensures the icon and link are on opposite ends */
-  align-items: center; /* Vertically aligns the icon and button */
-  margin-bottom: 10px; /* Adds some spacing below the header */
+  justify-content: space-between;
+  /* Ensures the icon and link are on opposite ends */
+  align-items: center;
+  /* Vertically aligns the icon and button */
+  margin-bottom: 10px;
+  /* Adds some spacing below the header */
 }
 
 .project-tile .tile-header .icon {
   color: #17a2b8;
   font-size: 2rem;
-  flex-shrink: 0; /* Ensures the icon doesn't resize */
+  flex-shrink: 0;
+  /* Ensures the icon doesn't resize */
 }
 
 .project-tile .tile-header .tile-link-container {
-  flex-shrink: 0; /* Prevents the container from resizing */
+  flex-shrink: 0;
+  /* Prevents the container from resizing */
 }
 
 .project-tile .tile-header .tile-link-container a {
@@ -960,3 +997,49 @@ align-content: center;
   background-color: #17a2b8;
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# Featured Publications Section
+--------------------------------------------------------------*/
+
+.pubs-list .tile-link {
+  display: inline-flex; /* Ensures the text and icon are inline and aligned properly */
+  align-items: center; /* Vertically centers the icon and text */
+  gap: 4px; /* Adds spacing between text and icon */
+  text-decoration: none;
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: #17a2b8;
+  border: 1px solid #17a2b8;
+  padding: 4px 8px; /* Ensures enough space inside the button */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 5px; /* Adds spacing between the paragraph text and the button */
+  white-space: nowrap; /* Prevents wrapping for the text and icon */
+}
+
+.pubs-list .tile-link:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.pubs-list .tile-link i {
+  font-size: 0.6rem; /* Adjust icon size */
+}
+.pubs-list p {
+  margin: 0; /* Reset default margin */
+  padding-left: 20px; /* Creates space for the hanging indent */
+  text-indent: -20px; /* Negative value aligns the first line to the left */
+  font-size: smaller; /* Optional: Adjust font size */
+  line-height: 1.5; /* Optional: Adjust line spacing */
+  position: relative;
+}
+
+.pubs-list p a {
+  display: inline-block; /* Ensures the link stays inline */
+  margin-left: 10px; /* Adds space between text and the link */
+  text-indent: 0; /* Prevents hanging indent from affecting the link */
+  vertical-align: middle; /* Aligns the link with the text */
+}
+
+
