@@ -53,7 +53,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f4fafd;
+  --background-color: #27264024;
   --surface-color: #ffffff;
 }
 
@@ -68,6 +68,23 @@
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
+}
+
+:root {
+  --bright-teal: #006466;
+  --mid-teal: #065A60;
+  --mid2-teal: #0B525B;
+  --dark-teal: #144552;
+  --deep-blue: #1B3A4B;
+  --deep-navy: #212F45;
+  --deep-indigo: #272640;
+  --deep-indigo-trans1: #27264067;
+  --deep-indigo-trans2: #2726402c;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark-purp: #312244;
+  --mid-purp: #3E1F47;
+  --bright-purp: #4D194D;
 }
 
 /*--------------------------------------------------------------
@@ -562,8 +579,6 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about {
-}
 
 .about .content h2 {
   font-weight: 700;
@@ -573,6 +588,7 @@ section,
 .about-container {
   padding-bottom: 10px;
 }
+
 .about-list {
   padding-left: 40px;
   font-size: smaller;
@@ -601,10 +617,75 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Tools Section
+--------------------------------------------------------------*/
+
+.tools .topics-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  padding-bottom: 20px;
+}
+
+.topics-tile {
+  background-color: var(--deep-indigo-trans1);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-content: normal;
+  font-weight: lighter;
+  text-align: center;
+  align-content: center;
+}
+
+.tools .tools-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  padding-bottom: 20px;
+}
+
+.tools-tile {
+  background-color: var(--deep-indigo-trans2);
+  /* color: white; */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-content: normal;
+  font-weight: lighter;
+  /* text-align: center; */
+}
+
+.tools-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.topics-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.tools-tile ul{
+  list-style-type: none;
+}
+.tools-tile li {
+  font-size: .8rem;
+  line-height: 1.25;
+  font-weight: normal;
+}
+.tools-tile h4 {
+ padding-bottom: 10px;
+}
+
+
+
+/*--------------------------------------------------------------
 # Technologies Section
 --------------------------------------------------------------*/
-.technologies {
-}
 
 .technologies .container-tiles {
   display: grid;
@@ -792,7 +873,7 @@ section,
   padding: 20px;
   margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  align-content:normal;
+  align-content: normal;
 }
 
 .project-tile:hover {
@@ -820,9 +901,9 @@ section,
 }
 
 .project-tile .role {
-padding-top: 10px;
+  padding-top: 10px;
   font-size: 0.8rem;
-  font-weight:100;
+  font-weight: 100;
   color: #333;
   text-align: right;
 }
