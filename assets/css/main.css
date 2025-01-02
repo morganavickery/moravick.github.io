@@ -101,6 +101,12 @@ h6 {
   /* Semi Bold */
 }
 
+.emphasize {
+  padding: 20px;
+  color: var(--contrast-color);
+  font-family: inherit;
+}
+
 p,
 a,
 li,
@@ -534,7 +540,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 60px 60px;
   overflow: clip;
 }
 
@@ -542,7 +548,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   position: relative;
 }
 
@@ -575,13 +581,12 @@ section,
 .hero {
   width: 100%;
   min-height: 50vh;
-  /* Reduce the minimum height */
-  padding: 40px 0;
-  /* Reduce vertical padding */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  /* Ensures the pseudo-element doesn't spill out */
 }
 
 .hero img {
@@ -592,22 +597,34 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  /* Place image behind everything */
 }
 
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 70%);
+.hero::before {
+  content: '';
   position: absolute;
   inset: 0;
+  background: linear-gradient(45deg,
+      rgba(39, 38, 64, 0.9),
+      /* Gradient start color with opacity */
+      rgba(20, 69, 82, 0.9)
+      /* Gradient end color with opacity */
+    );
   z-index: 2;
+  /* Overlay above the image */
 }
+
 
 .hero .container {
   position: relative;
   z-index: 3;
+  /* Ensure content is on top of the overlay */
+  color: #ffffff;
+  /* Optional: Ensure text is readable */
   text-align: center;
-  /* Ensure content stays centered */
+  /* Center align content */
 }
+
 
 .hero h2 {
   margin: 0;
@@ -664,11 +681,19 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about {
-  padding: 60px 60px;
 }
+
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
+}
+
+.about-container {
+  padding-bottom: 10px;
+}
+.about-list {
+  padding-left: 40px;
+  font-size: smaller;
 }
 
 .about .content ul {
@@ -697,7 +722,6 @@ section,
 # Technologies Section
 --------------------------------------------------------------*/
 .technologies {
-  padding: 60px 60px;
 }
 
 .technologies .container-tiles {
@@ -776,9 +800,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# ?? Section
---------------------------------------------------------------*/
 .custom-tile {
   display: flex;
   flex-direction: column;
@@ -833,6 +854,7 @@ section,
   background-color: #17a2b8;
   color: #fff;
 }
+
 /*--------------------------------------------------------------
 # SOCIAL BUTTONS 
 --------------------------------------------------------------*/
@@ -866,8 +888,6 @@ section,
 # PROJECTS Section
 --------------------------------------------------------------*/
 .projects {
-  padding: 60px 60px;
-  background-color:var(--background-color);
 }
 
 .projects .container-tiles {
@@ -877,7 +897,6 @@ section,
   grid-auto-rows: minmax(100px, auto);
 }
 
-
 .project-tile {
   background-color: #f8f9fa;
   border: 1px solid #e0e0e0;
@@ -885,34 +904,39 @@ section,
   padding: 20px;
   margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-content:normal;
 }
 
-.project-item:hover {
+.project-tile:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.project-item .icon {
+.project-tile .icon {
   color: #17a2b8;
   font-size: 2rem;
   margin-right: 15px;
 }
 
-.project-item .title {
-  font-size: 1.25rem;
+.project-tile .title {
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.project-item .description {
-  font-size: 1rem;
-  line-height: 1.5;
+.project-tile .description {
+  font-size: .8rem;
+  line-height: 1.25;
+  font-weight: lighter;
   color: #555;
-  margin-bottom: 10px;
 }
 
-.project-item .role {
-  font-size: 0.95rem;
-  font-weight: bold;
+.project-tile .role {
+padding-top: 10px;
+  font-size: 0.8rem;
+  font-weight:100;
   color: #333;
+  text-align: right;
+}
+.cv {
 }
