@@ -758,6 +758,15 @@ section .content-container {
   object-fit: contain;
 }
 
+.contact-container {
+  padding-top: 40px;
+  font-size: smaller;
+text-align: center;
+}
+.contact-container em {
+  color: var(--nav-color)
+}
+
 
 /*--------------------------------------------------------------
 # PROJECTS Section
