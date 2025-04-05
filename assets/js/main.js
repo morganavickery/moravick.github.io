@@ -18,6 +18,7 @@
     document.querySelector('#header').classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
+    document.body.classList.toggle('nav-open'); // Add this line
   }
   headerToggleBtn.addEventListener('click', headerToggle);
 

@@ -15,34 +15,34 @@
   --default-font: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Lato", sans-serif;
-}
 
-
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
   --background-color: #ffffff;
-  /* Background color for the entire website, including individual sections */
   --default-color: black;
-  /* Default color used for the majority of the text content across the entire website */
   --heading-color: black;
-  /* Color for headings, subheadings and title throughout the website */
   --accent-color: #006466;
-  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff;
-  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff;
-  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
   --nav-color: #a8a9b4;
-  /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff;
-  /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #040b14;
-  /* Used as the background color for mobile navigation menu */
 
+  --bright-teal: #006466;
+  --mid-teal: #065A60;
+  --mid2-teal: #0B525B;
+  --dark-teal: #144552;
+  --deep-blue: #1B3A4B;
+  --deep-navy: #212F45;
+  --deep-indigo: #272640;
+  --deep-indigo-trans1: #27264067;
+  --deep-indigo-trans2: #2726402c;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark-purp: #312244;
+  --mid-purp: #3E1F47;
+  --bright-purp: #4D194D;
+
+  scroll-behavior: smooth;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -58,28 +58,6 @@
   --heading-color: #ffffff;
   --surface-color: #151f2b;
   --contrast-color: #ffffff;
-}
-
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
-
-:root {
-  --bright-teal: #006466;
-  --mid-teal: #065A60;
-  --mid2-teal: #0B525B;
-  --dark-teal: #144552;
-  --deep-blue: #1B3A4B;
-  --deep-navy: #212F45;
-  --deep-indigo: #272640;
-  --deep-indigo-trans1: #27264067;
-  --deep-indigo-trans2: #2726402c;
-  --white: #FFFFFF;
-  --black: #000000;
-  --dark-purp: #312244;
-  --mid-purp: #3E1F47;
-  --bright-purp: #4D194D;
 }
 
 /*--------------------------------------------------------------
@@ -99,7 +77,6 @@ a {
 
 a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
 }
 
 h1,
@@ -232,7 +209,6 @@ span {
 }
 
 .header .header-toggle:hover {
-  color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
@@ -425,16 +401,17 @@ span {
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
-section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 40px;
+  padding: 40px 20px; /* Adjusted for better responsiveness */
   overflow: clip;
 }
 
-section .content-container {
-  padding-left: 60px;
+.section .content-container {
+  max-width: 1200px; /* Restrict content width for larger screens */
+  margin: 0 auto; /* Center content */
+  padding: 0 20px; /* Add padding for smaller screens */
 }
 
 /*--------------------------------------------------------------
@@ -443,6 +420,7 @@ section .content-container {
 .section-title {
   padding-bottom: 20px;
   position: relative;
+  text-align: center; /* Center-align titles for consistency */
 }
 
 .section-title h2 {
@@ -460,12 +438,36 @@ section .content-container {
   width: 50px;
   height: 3px;
   background: var(--dark-teal);
-  left: 0;
+  left: 50%; /* Center the underline */
+  transform: translateX(-50%);
   bottom: 0;
 }
 
 .section-title p {
   margin-bottom: 0;
+  font-size: 16px; /* Adjust font size for better readability */
+  color: var(--nav-color);
+}
+
+/*--------------------------------------------------------------
+# Responsive Adjustments for Sections
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .section {
+    padding: 30px 15px; /* Reduce padding for smaller screens */
+  }
+
+  .section-title h2 {
+    font-size: 24px; /* Adjust title size for smaller screens */
+  }
+
+  .section-title p {
+    font-size: 14px; /* Adjust subtitle size for smaller screens */
+  }
+
+  .section .content-container {
+    padding: 0 10px; /* Reduce padding for smaller screens */
+  }
 }
 
 .content-container p {
@@ -483,7 +485,6 @@ section .content-container {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Ensures the pseudo-element doesn't spill out */
 }
 
 .hero .background-container img {
@@ -640,15 +641,7 @@ section .content-container {
 # Tools Section
 --------------------------------------------------------------*/
 
-.tools .topics-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(auto, auto);
-  padding-bottom: 10px;
-}
-
-.topics-tile {
+.mini-tile {
   background-color: var(--deep-indigo-trans1);
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -662,72 +655,6 @@ section .content-container {
   /* Centers the content vertically */
 }
 
-.tools .tools-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(auto, auto);
-}
-
-.tools-tile {
-  background-color: var(--deep-indigo-trans2);
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  height: 80px;
-  padding: 10px 10px 10px 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  /* Enables flexible alignment */
-  flex-direction: column;
-  /* Ensures header and content are stacked vertically */
-  align-items: center;
-  /* Centers the content horizontally */
-  justify-content: center;
-  /* Centers the content vertically */
-}
-
-.tools-tile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.tools-tile .tile-header {
-  display: flex;
-  align-items: center;
-  /* Vertically aligns all elements */
-  justify-content: center;
-  /* Centers content horizontally */
-  gap: 10px;
-  /* Adds spacing between the title and the icon */
-  margin-bottom: 10px;
-  /* Adds spacing below the header */
-}
-
-.tools-tile .tile-header h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  text-align: justify;
-}
-
-.tools-tile .tile-header .bracket-icon-container img {
-  height: 24px;
-  /* Adjust size for brackets */
-  width: auto;
-  /* Keep proportions */
-}
-
-.tools-tile ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tools-tile li {
-  font-size: 0.5rem;
-  line-height: 1.25;
-  font-weight: normal;
-}
 
 
 /*--------------------------------------------------------------
