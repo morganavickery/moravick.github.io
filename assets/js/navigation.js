@@ -54,15 +54,28 @@
 
       document.querySelectorAll('#navmenu a').forEach(navmenu => {
         navmenu.addEventListener('click', function () {
-            header.classList.remove('header-show');
-            headerToggleBtn.classList.add('bi-list');
-            headerToggleBtn.classList.remove('bi-x');
-            document.body.classList.remove('nav-open');
-            // Reset content shift on nav close
-            const main = document.querySelector('main.main');
-            const footer = document.getElementById('footer');
-            if (main) main.style.marginLeft = '';
-            if (footer) footer.style.marginLeft = '';
+          // Toggle header visibility on nav link click for small screens
+          if (window.innerWidth < 800) {
+            if (header.classList.contains('header-show')) {
+              header.classList.remove('header-show');
+              headerToggleBtn.classList.add('bi-list');
+              headerToggleBtn.classList.remove('bi-x');
+              document.body.classList.remove('nav-open');
+              const main = document.querySelector('main.main');
+              const footer = document.getElementById('footer');
+              if (main) main.style.marginLeft = '0px';
+              if (footer) footer.style.marginLeft = '0px';
+            } else {
+              header.classList.add('header-show');
+              headerToggleBtn.classList.remove('bi-list');
+              headerToggleBtn.classList.add('bi-x');
+              document.body.classList.add('nav-open');
+              const main = document.querySelector('main.main');
+              const footer = document.getElementById('footer');
+              if (main) main.style.marginLeft = '300px';
+              if (footer) footer.style.marginLeft = '300px';
+            }
+          }
         });
       });
 

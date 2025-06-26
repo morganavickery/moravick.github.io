@@ -424,6 +424,9 @@ span {
     /* Adjust headshot size on smaller screens */
     margin-bottom: 15px;
   }
+    .hero .container {
+      left: 0px;
+    }
 
   .hero h2 {
     font-size: 28px;
