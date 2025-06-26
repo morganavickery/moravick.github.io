@@ -196,7 +196,7 @@ span {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 750px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
@@ -292,7 +292,7 @@ span {
 /*--------------------------------------------------------------
 # Responsive Adjustments for Sections
 --------------------------------------------------------------*/
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .section {
     padding: 30px 15px; /* Reduce padding for smaller screens */
   }
@@ -362,6 +362,7 @@ span {
   gap: 20px;
   /* Add spacing between elements */
   text-align: center;
+  left: 50px;
 }
 
 .hero .headshot-container {
@@ -411,9 +412,7 @@ span {
   font-family: inherit;
   font-weight: lighter;
 }
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .hero {
     flex-direction: column;
     /* Stack items vertically */
@@ -707,7 +706,7 @@ text-align: center;
 }
 
 /* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .technologies .isotope-container {
     grid-template-columns: 1fr;
     /* One tile per row on smaller screens */
