@@ -1,9 +1,8 @@
+/* Navigation Menu Link Styling */
 .navmenu a {
   font-family: var(--nav-font);
   font-weight: 700;
-  /* Bold for navigation links */
 }
-
 
 /*--------------------------------------------------------------
 # Global Header
@@ -17,9 +16,9 @@
   bottom: 0;
   padding: 0 15px;
   width: 300px;
-  transition: all ease-in-out 0.3s;
+  transition: left 0.3s, background-color 0.3s;
   overflow-y: auto;
-  z-index: 997;
+  z-index: 1100;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
@@ -41,7 +40,7 @@
 }
 
 .header .logo h1 {
-  font-size: 24px;
+  font-size: 18px;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
@@ -60,10 +59,10 @@
   color: var(--default-color);
   margin: 0 2px;
   border-radius: 50%;
-  text-align: center;
   width: 40px;
   height: 40px;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s;
+  text-align: center;
 }
 
 .header .social-links a:hover {
@@ -71,24 +70,37 @@
   background: var(--accent-color);
 }
 
-@media (min-width: 1200px) {
-
+/* Responsive header positioning and content shift */
+@media (min-width: 800px) {
+  .header {
+    left: 0;
+  }
   .header~main,
   .header~#footer {
     margin-left: 300px;
+    transition: margin-left 0.3s;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 799px) {
   .header {
     left: -100%;
   }
+  .header.header-show {
+    left: 0;
+  }
+  .header.header-show ~ main,
+  .header.header-show ~ #footer {
+    margin-left: 300px;
+    transition: margin-left 0.3s;
+  }
+  main,
+  #footer {
+    transition: margin-left 0.3s;
+  }
 }
 
-.header.header-show {
-  left: 0;
-}
-
+/* Navigation Toggle Button */
 .header .header-toggle {
   color: var(--contrast-color);
   background-color: var(--accent-color);
@@ -111,13 +123,22 @@
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
+/* Centered Site Name */
+.header .sitename {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-.mobile-nav-toggle {
-  display: none;
-}
-
 .navmenu {
   padding: 0;
   z-index: 9997;
@@ -139,7 +160,7 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  transition: 0.3s;
+  transition: color 0.3s;
   width: 100%;
 }
 
@@ -159,4 +180,9 @@
 .navmenu .active .navicon,
 .navmenu .active:focus .navicon {
   color: var(--accent-color);
+}
+
+/* Hide mobile nav toggle if not needed */
+.mobile-nav-toggle {
+  display: none;
 }
