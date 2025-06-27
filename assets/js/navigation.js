@@ -1,5 +1,11 @@
-// Highlight nav links based on scroll position (scrollspy)
-  (function() {
+const header = document.getElementById('header');
+const headerToggleBtn = document.getElementById('header-toggle');
+const main = document.querySelector('main.main');
+const footer = document.getElementById('footer'); 
+
+
+// dynamic highlights for scrolling on index
+(function() {
     function navmenuScrollspy() {
       const navmenulinks = document.querySelectorAll('.navmenu a');
       navmenulinks.forEach(navmenulink => {
@@ -19,65 +25,21 @@
     document.addEventListener('scroll', navmenuScrollspy);
   })();
 
-  // Navigation toggle for small screens
+// DOM LOADER
   document.addEventListener('DOMContentLoaded', function () {
     function setupNavToggle() {
-      const header = document.getElementById('header');
-      const headerToggleBtn = document.querySelector('.header-toggle');
-      if (!header || !headerToggleBtn) return;
 
-      function toggleNav() {
-        if (window.innerWidth < 800) {
-          header.classList.toggle('header-show');
-          headerToggleBtn.classList.toggle('bi-list');
-          headerToggleBtn.classList.toggle('bi-x');
-          document.body.classList.toggle('nav-open');
-        }
+      // Correctly assign toggleHeader to the header-toggle button
+      // Make sure you are selecting the correct element:
+      // The button in your HTML is: <i class="header-toggle d-xl-none bi bi-list"></i>
+      // So use querySelector('.header-toggle') instead of getElementById('header-toggle')
+      const headerToggleBtn = document.querySelector('.header-toggle');
+      if (headerToggleBtn) {
+        headerToggleBtn.addEventListener('click', function () {
+          toggleHeader();
+        });
       }
 
-      headerToggleBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        toggleNav();
-        // Shift content when nav is shown/hidden on small screens
-        const main = document.querySelector('main.main');
-        const footer = document.getElementById('footer');
-        if (window.innerWidth < 800) {
-          if (header.classList.contains('header-show')) {
-            if (main) main.style.marginLeft = '300px';
-            if (footer) footer.style.marginLeft = '300px';
-          } else {
-            if (main) main.style.marginLeft = '';
-            if (footer) footer.style.marginLeft = '';
-          }
-        }
-      });
-
-      document.querySelectorAll('#navmenu a').forEach(navmenu => {
-        navmenu.addEventListener('click', function () {
-          // Toggle header visibility on nav link click for small screens
-          if (window.innerWidth < 800) {
-            if (header.classList.contains('header-show')) {
-              header.classList.remove('header-show');
-              headerToggleBtn.classList.add('bi-list');
-              headerToggleBtn.classList.remove('bi-x');
-              document.body.classList.remove('nav-open');
-              const main = document.querySelector('main.main');
-              const footer = document.getElementById('footer');
-              if (main) main.style.marginLeft = '0px';
-              if (footer) footer.style.marginLeft = '0px';
-            } else {
-              header.classList.add('header-show');
-              headerToggleBtn.classList.remove('bi-list');
-              headerToggleBtn.classList.add('bi-x');
-              document.body.classList.add('nav-open');
-              const main = document.querySelector('main.main');
-              const footer = document.getElementById('footer');
-              if (main) main.style.marginLeft = '300px';
-              if (footer) footer.style.marginLeft = '300px';
-            }
-          }
-        });
-      });
 
       window.addEventListener('resize', function () {
         const main = document.querySelector('main.main');
@@ -113,36 +75,37 @@
     } else {
       setupNavToggle();
     }
-  });(function() {
-  function initHeaderNav() {
-    const headerToggleBtn = document.querySelector('.header-toggle');
-    if (!headerToggleBtn) return;
-    function headerToggle() {
-      document.querySelector('#header').classList.toggle('header-show');
-      headerToggleBtn.classList.toggle('bi-list');
-      headerToggleBtn.classList.toggle('bi-x');
-      document.body.classList.toggle('nav-open');
-    }
-    headerToggleBtn.addEventListener('click', headerToggle);
-    document.querySelectorAll('#navmenu a').forEach(navmenu => {
-      navmenu.addEventListener('click', () => {
-        if (document.querySelector('#header').classList.contains('header-show')) {
-          headerToggle();
-        }
-      });
-    });
-    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-      navmenu.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentNode.classList.toggle('active');
-        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-        e.stopImmediatePropagation();
-      });
-    });
-  }
-  // Wait for navigation to be loaded into the DOM
-  document.addEventListener('DOMContentLoaded', function() {
-    // If navigation is loaded dynamically, wait a tick
-    setTimeout(initHeaderNav, 0);
   });
-})();
+
+function toggleHeader() {
+    const header = document.getElementById('header');
+    const main = document.querySelector('main.main');
+    const footer = document.getElementById('footer');
+    const headerToggleBtn = document.querySelector('.header-toggle');
+    const isShown = header.classList.contains('header-show');
+
+    if (isShown) {
+        header.classList.remove('header-show');
+        header.setAttribute('visibility', 'hidden');
+        document.body.classList.remove('nav-open');
+        if (headerToggleBtn) {
+            headerToggleBtn.classList.add('bi-list');
+            headerToggleBtn.classList.remove('bi-x');
+        }
+        if (main) main.style.marginLeft = '';
+        if (footer) footer.style.marginLeft = '';
+    } else {
+        header.classList.add('header-show');
+                header.setAttribute('visibility', 'visible');
+
+        document.body.classList.add('nav-open');
+        if (headerToggleBtn) {
+            headerToggleBtn.classList.remove('bi-list');
+            headerToggleBtn.classList.add('bi-x');
+        }
+        if (main) main.style.marginLeft = '300px';
+        if (footer) footer.style.marginLeft = '300px';
+    }
+}
+
+
