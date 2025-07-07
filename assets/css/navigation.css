@@ -5,14 +5,14 @@
 }
 
 /*--------------------------------------------------------------
-# Global Header
+# Global navigation
 --------------------------------------------------------------*/
-.header {
+.navigation {
   color: var(--default-color);
   background-color: var(--background-color);
   position: fixed;
   top: 0;
-  left: 0;
+  left: -300px;
   bottom: 0;
   padding: 0 15px;
   width: 300px;
@@ -22,35 +22,39 @@
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.header .profile-img img {
+.navigation.navigation-show {
+  left: 0;
+}
+
+.navigation .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.header .logo {
+.navigation .logo {
   line-height: 1;
   margin-bottom: 15px;
 }
 
-.header .logo img {
+.navigation .logo img {
   max-height: 32px;
   margin-right: 8px;
 }
 
-.header .logo h1 {
+.navigation .logo h1 {
   font-size: 18px;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
 }
 
-.header .social-links {
+.navigation .social-links {
   margin: 0 0 20px 0;
 }
 
-.header .social-links a {
+.navigation .social-links a {
   font-size: 16px;
   display: inline-flex;
   align-items: center;
@@ -65,43 +69,13 @@
   text-align: center;
 }
 
-.header .social-links a:hover {
+.navigation .social-links a:hover {
   color: var(--contrast-color);
   background: var(--accent-color);
 }
 
-/* Responsive header positioning and content shift */
-@media (min-width: 800px) {
-  .header {
-    left: 0;
-  }
-  .header~main,
-  .header~#footer {
-    margin-left: 300px;
-    transition: margin-left 0.3s;
-  }
-}
-
-@media (max-width: 799px) {
-  .header {
-    left: -100%;
-  }
-  .header.header-show {
-    left: 0;
-  }
-  .header.header-show ~ main,
-  .header.header-show ~ #footer {
-    margin-left: 300px;
-    transition: margin-left 0.3s;
-  }
-  main,
-  #footer {
-    transition: margin-left 0.3s;
-  }
-}
-
 /* Navigation Toggle Button */
-.header .header-toggle {
+.navigation .navigation-toggle {
   color: var(--contrast-color);
   background-color: var(--accent-color);
   font-size: 22px;
@@ -119,12 +93,12 @@
   transition: background-color 0.3s;
 }
 
-.header .header-toggle:hover {
+.navigation .navigation-toggle:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
 /* Centered Site Name */
-.header .sitename {
+.navigation .sitename {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 700;
@@ -185,4 +159,22 @@
 /* Hide mobile nav toggle if not needed */
 .mobile-nav-toggle {
   display: none;
+}
+
+@media (min-width: 800px) {
+  .navigation {
+    left: 0;
+  }
+
+  .navigation.navigation-show ~ main,
+  .navigation.navigation-show ~ #footer {
+    margin-left: 300px;
+    transition: margin-left 0.3s;
+  }
+
+  .navigation ~ main,
+  .navigation ~ #footer {
+    margin-left: 0;
+    transition: margin-left 0.3s;
+  }
 }

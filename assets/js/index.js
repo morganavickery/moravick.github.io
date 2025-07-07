@@ -135,16 +135,4 @@
     }
   });
 
-  // Load navigation.html into the #header-include div
-  document.addEventListener("DOMContentLoaded", function() {
-    var headerInclude = document.getElementById('header-include');
-    if (headerInclude) {
-      fetch('navigation.html')
-        .then(response => response.text())
-        .then(html => {
-          headerInclude.innerHTML = html;
-        });
-    }
-  });
-
 })();

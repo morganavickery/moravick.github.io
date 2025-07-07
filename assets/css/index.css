@@ -67,6 +67,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  
 }
 
 a {
@@ -105,6 +106,7 @@ span {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -820,4 +822,23 @@ text-align: center;
   vertical-align: middle; /* Aligns the link with the text */
 }
 
+/* Layout shift support when nav is open */
+@media (min-width: 800px) {
+  .navigation.navigation-show ~ main,
+  .navigation.navigation-show ~ #footer {
+    margin-left: 300px;
+    transition: margin-left 0.3s;
+  }
 
+  .navigation ~ main,
+  .navigation ~ #footer {
+    margin-left: 0;
+    transition: margin-left 0.3s;
+  }
+}
+
+/* Smooth transition always */
+.main,
+#footer {
+  transition: margin-left 0.3s;
+}
