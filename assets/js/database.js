@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     database.forEach((item) => {
       let doiURL = item.link.trim();
       let hasDOI = doiURL !== "" && doiURL !== "-" && /^https?:\/\//.test(doiURL);
+      let isVenueEmpty = !item.venue || item.venue.trim() === "";
       let card = document.createElement("div");
       card.className = "database-card";
       if (hasDOI) {
@@ -65,14 +66,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       // Remove only the first and last double quotes if present
       let cleanTitle = item.title.replace(/^"(.*)"$/, "$1");
+      // Highlight "Vickery, M." in authors
+      let highlightedAuthors = item.authors.replace(
+        /Vickery, M\./g,
+        '<span style="font-weight: 600;">Vickery, M.</span>'
+      );
+      let flagHTML = "";
+      if (hasDOI) {
+        flagHTML = `<div class="doi-flag">Access Paper</div>`;
+      }
+      // Venue text or "Manuscript In Progress"
+      let venueText = isVenueEmpty ? "Manuscript In Progress" : item.venue;
       card.innerHTML = `
         <div class="card-header">
           <div class="card-year"><strong>${item.date}</strong></div>
-          ${hasDOI ? `<div class="doi-flag">Access Paper</div>` : ""}
+          ${flagHTML}
         </div>
-        <div class="card-authors">${item.authors}</div>
         <div class="card-title">${cleanTitle}</div>
-        <div class="card-venue">${item.venue}</div>
+        <div class="card-authors">${highlightedAuthors}</div>
+        <div class="card-venue">${venueText}</div>
       `;
       container.appendChild(card);
     });
