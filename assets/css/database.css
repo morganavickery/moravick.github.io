@@ -160,7 +160,6 @@ ARTICLE CARDS
   color: var(--grey);
   margin-left: 50px;
   text-align: right;
-  margin-bottom: 2px; /* Reduce gap */
   line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
@@ -183,7 +182,6 @@ ARTICLE CARDS
   font-weight: normal;
   color: var(--grey);
   text-align: right;
-  margin-top: 1px;
   line-height: 1.1;
 }
 

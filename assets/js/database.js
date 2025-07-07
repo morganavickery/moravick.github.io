@@ -56,14 +56,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let container = document.getElementById("database-cards");
     container.innerHTML = "";
     database.forEach((item) => {
-      let doiURL = item.link.trim();
-      let hasDOI = doiURL !== "" && doiURL !== "-" && /^https?:\/\//.test(doiURL);
-      let isVenueEmpty = !item.venue || item.venue.trim() === "";
+      let flagHTML = "";
+
       let card = document.createElement("div");
       card.className = "database-card";
-      if (hasDOI) {
-        card.addEventListener("click", () => window.open(doiURL, "_blank"));
-      }
+
+  let rawLink = item.link || "";
+let url = rawLink.replace(/[\u200B-\u200D\uFEFF]/g, "").trim();
+
+if (/^https?:\/\//i.test(url)) {
+  console.log(`[FLAG] Added for: ${item.title}`);
+  card.addEventListener("click", () => window.open(url, "_blank"));
+  flagHTML = `<div class="doi-flag">Access Paper</div>`;
+}
+
+      let isVenueEmpty = !item.venue || item.venue.trim() === "";
+
+
       // Remove only the first and last double quotes if present
       let cleanTitle = item.title.replace(/^"(.*)"$/, "$1");
       // Highlight "Vickery, M." in authors
@@ -71,10 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         /Vickery, M\./g,
         '<span style="font-weight: 600;">Vickery, M.</span>'
       );
-      let flagHTML = "";
-      if (hasDOI) {
-        flagHTML = `<div class="doi-flag">Access Paper</div>`;
-      }
+
       // Venue text or "Manuscript In Progress"
       let venueText = isVenueEmpty ? "Manuscript In Progress" : item.venue;
       card.innerHTML = `
