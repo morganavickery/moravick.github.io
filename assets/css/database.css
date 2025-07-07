@@ -73,6 +73,13 @@ HERO SECTION
   padding: 20px;
 }
 
+.database-hero h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--offwhite);
+  margin-top: 10px;
+}
+
 /*-------------------------------------------------------------------
   # DATABASE CONTAINER
 -------------------------------------------------------------------*/
@@ -113,6 +120,7 @@ ARTICLE CARDS
   color: inherit;
   cursor: pointer;
   position: relative;
+  gap: 6px; /* Add consistent vertical gap between children */
 }
 
 .database-card:hover {
@@ -125,7 +133,7 @@ ARTICLE CARDS
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 4px; /* Reduce gap */
 }
 
 .card-year {
@@ -147,32 +155,36 @@ ARTICLE CARDS
 }
 
 .card-authors {
-  font-size: 11px;
+  font-size: 12px;
   font-style: normal;
   color: var(--grey);
-  text-align: center;
-  margin-bottom: 3px;
-  line-height: 1.2;
+  margin-left: 50px;
+  text-align: right;
+  margin-bottom: 2px; /* Reduce gap */
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-title {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 500;
-  text-align: center;
-  margin: 5px 0px;
-  padding: 10px;
-  line-height: 1.4;
+  text-align: left;
+  padding: 6px 0; /* Reduce vertical padding */
+  line-height: 1.1;
   color: var(--accent-color);
   font-family: var(--default-font);
 }
 
 .card-venue {
-  font-size: 12px;
+  font-size: 10px;
   font-style: italic;
   font-weight: normal;
   color: var(--grey);
-  text-align: center;
+  text-align: right;
   margin-top: 1px;
+  line-height: 1.1;
 }
 
 /*-------------------------------------------------------------------
