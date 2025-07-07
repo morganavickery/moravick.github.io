@@ -137,14 +137,12 @@ ARTICLE CARDS
 }
 
 .card-year {
-  font-size: 12px;
   font-weight: bold;
   color: var(--grey);
   text-align: left;
 }
 
 .doi-flag {
-  font-size: 10px;
   font-weight: bold;
   color: var(--contrast-color);
   background: var(--mid-purp);
@@ -155,7 +153,6 @@ ARTICLE CARDS
 }
 
 .card-authors {
-  font-size: 12px;
   font-style: normal;
   color: var(--grey);
   margin-left: 50px;
@@ -167,7 +164,6 @@ ARTICLE CARDS
 }
 
 .card-title {
-  font-size: 12px;
   font-weight: 500;
   text-align: left;
   padding: 6px 0; /* Reduce vertical padding */
@@ -177,7 +173,6 @@ ARTICLE CARDS
 }
 
 .card-venue {
-  font-size: 10px;
   font-style: italic;
   font-weight: normal;
   color: var(--grey);
@@ -205,4 +200,18 @@ MOBILE SCREEN RESPONSIVENESS
   body.database-page main {
     margin-left: 300px;
   }
+}
+
+.card-title {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.card-authors,
+.card-year {
+  font-size: clamp(12px, 1.5vw, 16px);
+}
+
+.card-venue,
+.doi-flag {
+  font-size: clamp(10px, 1.2vw, 14px);
 }
