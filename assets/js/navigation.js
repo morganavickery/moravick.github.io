@@ -71,6 +71,45 @@ document.addEventListener("DOMContentLoaded", function() {
         setupNavToggle();
       });
   }
+  const footerInclude = document.getElementById('footer-include');
+  if (footerInclude) {
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => {
+        footerInclude.innerHTML = html;
+        // Remove preloader after footer is injected (if present)
+        const preloader = document.getElementById('preloader');
+        if (preloader) preloader.remove();
+      });
+  }
+
+  // Scroll-to-top button logic (use .active class for visibility)
+  let scrollBtn = document.getElementById('scroll-top');
+  if (!scrollBtn) {
+    scrollBtn = document.createElement('a');
+    scrollBtn.href = "#";
+    scrollBtn.id = "scroll-top";
+    scrollBtn.className = "scroll-top d-flex align-items-center justify-content-center";
+    scrollBtn.innerHTML = '<i class="bi bi-arrow-up-short"></i>';
+    document.body.appendChild(scrollBtn);
+  }
+
+  // Show/hide button using .active class
+  function toggleScrollTop() {
+    if (window.scrollY > 100) {
+      scrollBtn.classList.add('active');
+    } else {
+      scrollBtn.classList.remove('active');
+    }
+  }
+  window.addEventListener('scroll', toggleScrollTop);
+  window.addEventListener('load', toggleScrollTop);
+
+  // Scroll to top on click
+  scrollBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
 
 // Scrollspy for nav links
@@ -93,3 +132,4 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 })();
+
